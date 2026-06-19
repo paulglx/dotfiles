@@ -1,0 +1,115 @@
+tap "browsh-org/browsh"
+tap "dashlane/tap"
+tap "mistertea/et"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# TUI web browser with CSS, inline image and JavaScript support
+brew "chawan"
+# Manage your dotfiles across multiple diverse machines, securely
+brew "chezmoi"
+# Container runtimes on MacOS (and Linux) with minimal setup
+brew "colima", restart_service: :changed
+# Diff that understands syntax
+brew "difftastic"
+# AST-based pattern checker for JavaScript
+brew "eslint"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Disk usage analyzer with console interface written in Go
+brew "gdu"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Git blame for file trees
+brew "git-who"
+# Render markdown on the CLI
+brew "glow"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Post-modern modal text editor
+brew "helix"
+# Command-line benchmarking tool
+brew "hyperfine"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Git-compatible distributed version control system
+brew "jj"
+# TUI for interacting with the Jujutsu version control system
+brew "jjui"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Deep clean and optimize your Mac
+brew "mole"
+# Cross-platform ncurses Spotify client written in Rust
+brew "ncspot"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Manage multiple Node.js versions
+brew "nvm"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Command-line tool to download music from SoundCloud
+brew "scdl"
+# General purpose fuzzy finder TUI
+brew "television"
+# Display images in a terminal using block graphic characters
+brew "terminalimageviewer"
+# Tool to build, change, and version infrastructure
+brew "terraform"
+# Terminal multiplexer
+brew "tmux"
+# Language for application scale JavaScript development
+brew "typescript"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+# Allows connection to a computer remotely
+cask "anydesk"
+cask "font-geist-mono-nerd-font"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# Cross-platform Git credential storage for multiple hosting providers
+cask "git-credential-manager"
+# Open Source Multimedia Framework
+cask "gstreamer-runtime"
+# Open-source keystroke visualiser
+cask "keycastr"
+# Utility to extend trackpad functionality
+cask "middleclick"
+# Client program for the OpenVPN Access Server
+cask "openvpn-connect"
+# Compatibility layer to run Windows applications
+cask "wine-stable"
+cargo "cargo-llvm-cov"
+cargo "cargo-tarpaulin"
+cargo "dcr"
+cargo "dcs"
+cargo "trunk"
+uv "prek"
+npm "@earendil-works/pi-coding-agent"
+npm "corepack"
+npm "drizzle-orm"

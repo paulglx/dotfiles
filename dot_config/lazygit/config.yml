@@ -1,0 +1,6 @@
+os:
+  edit: 'nvim --server "$NVIM" --remote-tab "{{filename}}"'
+  editAtLine: 'nvim --server "$NVIM" --remote-tab "+{{line}}" "{{filename}}"'
+  editAtLineNoWait: 'nvim --server "$NVIM" --remote-tab "+{{line}}" "{{filename}}"'
+  open: 'nvim --server "$NVIM" --remote-tab "{{filename}}"'
+  openAtLine: 'nvim --server "$NVIM" --remote-tab "+{{line}}" "{{filename}}"'
