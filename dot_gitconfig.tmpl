@@ -13,6 +13,7 @@
 	ff = false
 	rebase = true
 
+{{- if lookPath "difft" }}
 [difftool "difftastic"]
   # See `man git-difftool` for a description of MERGED, LOCAL and REMOTE.
   cmd = difft "$MERGED" "$LOCAL" "abcdef1" "100644" "$REMOTE" "abcdef2" "100644"
@@ -31,10 +32,13 @@
     # `-t difftastic` every time.
     tool = difftastic
     external = difft
+{{- end }}
+{{- if stat "/usr/local/share/gcm-core/git-credential-manager" }}
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+{{- end }}
 [rerere]
 	enabled = true

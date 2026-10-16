@@ -120,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Zoxide (not in claude code)
-eval "$(zoxide init --cmd cd zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init --cmd cd zsh)"
 
 # eza
 alias ls='eza -1 --color=always --group-directories-first'
@@ -134,7 +134,11 @@ alias lS='eza -1 --color=always --group-directories-first --icons'
 alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+elif command -v fzf >/dev/null; then
+  source <(fzf --zsh)
+fi
 
 alias n='nvim'
 alias lzg='lazygit'
@@ -147,26 +151,28 @@ alias msdm='make start-dev-min'
 alias mbd='make build-dev'
 
 # Created by `pipx` on 2025-02-17 14:56:25
-export PATH="$PATH:/Users/paul.guilloux/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 autoload -U compinit && compinit
 
 #pipx completions
-eval "$(register-python-argcomplete pipx)"
+command -v register-python-argcomplete >/dev/null && eval "$(register-python-argcomplete pipx)"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  [ -s "$NVM_DIR/nvm.sh" ] && [ ! -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && [ ! -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "$NVM_DIR/bash_completion"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/paul.guilloux/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 export PATH="/opt/homebrew/opt/pnpm@9/bin:$PATH"
 
 # bun completions
-[ -s "/Users/paul.guilloux/.bun/_bun" ] && source "/Users/paul.guilloux/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -174,7 +180,7 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # pnpm
-export PNPM_HOME="/Users/paul.guilloux/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -182,7 +188,7 @@ esac
 # pnpm end
 
 # opencode
-export PATH=/Users/paul.guilloux/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH
 
 # Entire CLI shell completion
-autoload -Uz compinit && compinit && source <(entire completion zsh)
+command -v entire >/dev/null && source <(entire completion zsh)
